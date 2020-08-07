@@ -286,7 +286,11 @@ NAME     AGE
 noobaa   21h
 ```
 
-Edit `storageLocation` in [create-backup.yaml.j2](https://github.com/konveyor/velero-examples/blob/master/cassandra/roles/backup-cassandra/templates/create-backup.yaml.j2#L12) to the name returned from above command, in this case its `noobaa`. It should look something like this:
+Edit value of `velero.io/storage-location` label and `storageLocation` spec in [create-backup.yaml.j2](https://github.com/konveyor/velero-examples/blob/master/cassandra/roles/backup-cassandra/templates/create-backup.yaml.j2) to the name returned from above command, in this case its `noobaa`. It should look something like this:
+```
+labels:
+    velero.io/storage-location: noobaa
+```
 
 ```
 storageLocation: noobaa
@@ -458,7 +462,11 @@ NAME     AGE
 noobaa   21h
 ```
 
-Edit `storageLocation` in [postgres-backup.yaml](https://github.com/konveyor/velero-examples/blob/master/patroni/postgres-backup.yaml#L12) to the name returned from above command, in this case its `noobaa`. It should look something like this:
+Edit value of `velero.io/storage-location` label and `storageLocation` spec in [postgres-backup.yaml](https://github.com/konveyor/velero-examples/blob/master/patroni/postgres-backup.yaml) to the name returned from above command, in this case its `noobaa`. It should look something like this:
+```
+labels:
+    velero.io/storage-location: noobaa
+```
 
 ```
 storageLocation: noobaa
